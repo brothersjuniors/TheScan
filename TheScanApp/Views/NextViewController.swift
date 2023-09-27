@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import GoogleMobileAds
 class NextViewController: UIViewController {
   let realm = try! Realm()
     var str = ""
@@ -14,9 +15,10 @@ class NextViewController: UIViewController {
     
     @IBOutlet weak var backButton: UIButton!
     
+    @IBOutlet weak var bannnerView: GADBannerView!
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+    add()
         textView.text = str
         if textView.text == "" {
             return
@@ -27,7 +29,13 @@ class NextViewController: UIViewController {
        
     }
 
+    private func add(){
+        bannnerView.adUnitID = "ca-app-pub-7983995856043178/4010210461"
+        bannnerView.rootViewController = self
+        bannnerView.load(GADRequest())
         
+        
+    }
     
     
     @IBAction func backButton(_ sender: UIButton) {

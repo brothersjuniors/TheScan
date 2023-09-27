@@ -9,6 +9,9 @@ import UIKit
 import VisionKit
 
 class SelectViewController: UIViewController, DataScannerViewControllerDelegate {
+    
+
+    
   let nextViewController = NextViewController()
      var texts: String?
     //データ スキャナーが使用可能かどうかを確認
@@ -17,7 +20,7 @@ class SelectViewController: UIViewController, DataScannerViewControllerDelegate 
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
     }
     func textStartButton() {
         guard scannerAvailable == true else { return }
